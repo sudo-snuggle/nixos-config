@@ -1,22 +1,24 @@
-# NixOS + Niri + Noctalia Shell
 
-A beautiful NixOS setup with niri and noctalia shell
+# NixOS + Niri + Noctalia Shell 
 
-🖥️ System Overview
+*simple opinianated nixos *
 
-    OS: NixOS (Unstable)
+---
 
-    WM: Niri
+## 🖥️ System Overview
 
-    Shell: Noctalia
+* **os**: NixOS
+* **wm**: niri
+* **shell**: noctalia shell
 
-    Terminal: Alacritty / Foot
+---
 
-📁 Structure
+## 📁 Directory Overview
 
-<details> <summary>Click to view directory tree</summary>
+<details>
+<summary>Click to view directory tree .</summary>
 
-```
+``` 
 NIXOS-CONFIG
 ├── home/
 │   ├── media/
@@ -43,46 +45,81 @@ NIXOS-CONFIG
 ```
 
 </details>
-🚀 Installation
+
+---
+## Installation 
 
 This guide assumes you have already performed a basic NixOS installation via the GUI/Calamares installer.
-1. Clone the Repository
+
+### 1. Clone the Repository
 
 Clone this into your home folder:
-Bash
 
-git clone https://github.com/sudo-snuggle/nixos-config.git ~/nixos-config
+```
+nix-shell -p git --run "git clone https://github.com/sudo-snuggle/nixos-config.git ."
 cd ~/nixos-config
+```
 
-2. Import Hardware Specs
+### 2. Copy your hardware-configuration.nix 
 
 You must use the hardware file generated for your specific machine:
-Bash
 
+```
 cp /etc/nixos/hardware-configuration.nix ~/nixos-config/hardware-configuration.nix
+```
 
-3. Apply the Config
-Bash
+### 3. Apply the Config
 
+
+**⚠️important:**
+
+ State Version: Ensure the system.stateVersion in configuration.nix matches the version you originally installed. Do not change this unless you know what you are doing
+
+
+```
 git add .
-sudo nixos-rebuild switch --flake .#nixos-btw
+sudo nixos-rebuild test --flake .#nixos-btw
+```
 
-⚠️ Important Notes
+[!NOTE] First Install Size: The initial build may download several gigabytes of data (approx. 12GB)
 
-    [!CAUTION] Git Tree is Dirty: You will see a warning saying Git tree is dirty. Ignore it. This just means you haven't committed your hardware-configuration.nix yet. The installation will work fine.
 
-    [!IMPORTANT] State Version: Ensure the system.stateVersion in configuration.nix matches the version you originally installed. Do not change this unless you know what you are doing.
 
-    [!TIP] Post-Install: After the first reboot, run sudo passwd yasiru to ensure your user password is set correctly.
+---
 
-✨ Features
+## after Installation 
 
-    Ozone Wayland: Electron apps forced to native Wayland.
 
-    Power Management: Optimized for ThinkPads via TLP and Thermald.
 
-    Clean CLI: Modern replacements like eza, zoxide, and bat pre-configured.
+---
 
-📸 Showcase
+## ✨ Packages and Features
 
-(Insert your screenshots here)
+* **Browsing**       : Zen Browser & Brave
+* **Music**          : Spicetify (Themed Spotify)
+* **Terminal**: Alacritty & Kitty
+* **File Management**: Yazi (TUI) & Thunar (GUI)
+* **Editors**: VSCodium & Neovim
+* **CLI Tools**: Modern replacements (`eza`, `zoxide`, `bat`, `fzf`)
+* **Shell**: Fish Shell (Themed with Noctalia)
+* **Wayland**: Ozone layer enabled (Forces Electron apps to native Wayland)
+* **Power**: TLP & Thermald (ThinkPad optimized battery/thermal logic)
+* 
+* **Auto-Updates**: Scheduled system updates every Friday morning
+* **Auto-Cleanup**: Weekly garbage collection for old system generations
+
+> You can customize update schedules and cleanup rules at the bottom of the `configuration.nix` file.
+
+
+
+## Showcase
+
+
+</details>
+
+
+---
+
+## Final Thooughts
+
+:3
