@@ -1,9 +1,7 @@
 
-# NixOS+Niri+noctalia shell (dont use this yet)
+# NixOS + Niri + Noctalia Shell 
 
-*nixos configfiles. which niri (wayland compositor) and conctalia shell*
-
-just my personal nixos setup
+*just my personal nixos setup*
 
 ---
 
