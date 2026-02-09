@@ -49,31 +49,11 @@ NIXOS-CONFIG
 </details>
 
 ---
-## Installation - BETA
+## Installation 
 
+follow the manual installation process:
 
-
-Or follow the manual installation process:
-
-### 1. Add Nixos-config to your flake and import the module
-
-```nix
-# flake.nix
-{
-  inputs = {
-    nixos95.url = "github:Peritia-System/NixOS-95/Dev";
-    nixos95.inputs.nixpkgs.follows = "nixpkgs";
-  }
-  outputs = inputs @ { nixos95, ... }: {
-    nixosConfigurations.HOSTNAME = nixpkgs.lib.nixosSystem {
-      modules = [ 
-        nixos95.nixosModules.default
-        ./configuration.nix 
-      ];
-    };
-  };
-}
-```
+### 1. Add Nixos-config to your flake and import the modul`
 
 ### 2. Import in Configuration.nix
 
@@ -91,60 +71,6 @@ If you want to further customize Nixos95 you can use the following config option
 
 ```nix
 {
-  nixos95 = {
-    enable = true; # default is false
-    user = "USERNAME"; # no default set; specifies the user used by home-manager
-
-    wallpaper = ./Resources/Images/Wallpapers/Wallpaper-1.png;
-
-    taskbar = {
-      homeIcon = "whisker-menu-button";
-      battery-plugin = {
-        enable = true;
-        power_bar = {
-            enabe = true;
-            critical_at = 10;
-            warning_at = 20;
-            color_warning = "rgb(248,228,92)";
-            color_critical = "rgb(237,51,59)";
-            color_loading = "rgb(119,118,123)";
-            color_default = "rgb(143,240,164)";
-        };
-      };
-    };
-    applications = [
-      {
-        name = "Files";
-        description = "View and manage local files";
-        icon = "folder_open";
-        exe = "exo-open --launch FileManager";
-      }
-      {
-        name = "Terminal";
-        description = "Run commands";
-        icon = "xfce4-terminal";
-        pkg = pkgs.xfce4-terminal;
-      }
-      {
-        name = "Browser";
-        description = "Access the world wide web";
-        icon = "firefox";
-        exe = "exo-open --launch WebBrowser";
-      }
-    ];
-
-    keybinds = {
-      commands = [
-        { key = "<Super>r"; exe = "xfce4-appfinder --collapsed"; }
-        { key = "XF86WWW"; exe = "exo-open --launch WebBrowser"; }
-        { key = "XF86Mail"; exe = "exo-open --launch MailReder"; }
-        { key = "Print"; exe = "xfce4-screenshooter"; }
-        { key="<Super>l";  exe="xflock4"; }
-      ];
-      xfwm4 = [ ];
-    };
-  };
-}
 ```
 
 ### 3. **Build and switch to the system configuration**:
