@@ -53,9 +53,9 @@ NIXOS-CONFIG
 
 follow the manual installation process:
 
-### 1. Add Nixos-config to your flake and import the module'
+### 1. 
 
-### 2. Import in Configuration.nix
+### 2.
 
 ```
 {
@@ -64,8 +64,6 @@ follow the manual installation process:
 ```
 
 > Warning:
-> xxxxxxx:
-If you want to further customize Nixos you can use the following config options (given values are the default ones):
 
 ```
 {
@@ -73,7 +71,7 @@ If you want to further customize Nixos you can use the following config options 
 }
 ```
 
-### 3. **Build and switch to the system configuration**:
+### 3. 
 
 ```
 {
