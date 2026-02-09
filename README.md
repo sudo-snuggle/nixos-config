@@ -1,42 +1,40 @@
+# NixOS + Niri + Noctalia Shell
 
-# NixOS + Niri + Noctalia Shell 
+A beautiful NixOS setup with niri and noctalia shell
 
-*just my personal nixos setup*
+🖥️ System Overview
 
----
+    OS: NixOS (Unstable)
 
-## 🖥️ System Overview
+    WM: Niri
 
-* **os**: NixOS
-* **wm**: niri
-* **shell**: noctalia shell
+    Shell: Noctalia
 
----
+    Terminal: Alacritty / Foot
 
-## 📁 Directory Overview
+📁 Structure
 
-<details>
-<summary>tree .</summary>
+<details> <summary>Click to view directory tree</summary>
 
 ```
 NIXOS-CONFIG
 ├── home/
-│   ├── media/
-│   │   └── spicetify.nix
-│   ├── programs/
-│   ├── shell/
-│   │   ├── fish.nix
-│   │   └── noctalia.nix
-│   ├── terminal/
-│   │   ├── alacritty.nix
-│   │   └── fastfetch.nix
-│   └── web/
-│       └── zen.nix
+│   ├── media/
+│   │   └── spicetify.nix
+│   ├── programs/
+│   ├── shell/
+│   │   ├── fish.nix
+│   │   └── noctalia.nix
+│   ├── terminal/
+│   │   ├── alacritty.nix
+│   │   └── fastfetch.nix
+│   └── web/
+│       └── zen.nix
 ├── modules/
-│   ├── fonts/
-│   │   └── fonts.nix
-│   └── packages/
-│       └── essentials.nix
+│   ├── fonts/
+│   │   └── fonts.nix
+│   └── packages/
+│       └── essentials.nix
 ├── configuration.nix
 ├── flake.lock
 ├── flake.nix
@@ -45,51 +43,46 @@ NIXOS-CONFIG
 ```
 
 </details>
+🚀 Installation
 
----
-## Installation 
+This guide assumes you have already performed a basic NixOS installation via the GUI/Calamares installer.
+1. Clone the Repository
 
-follow the manual installation process:
+Clone this into your home folder:
+Bash
 
-### 1. Download the Config
+git clone https://github.com/sudo-snuggle/nixos-config.git ~/nixos-config
+cd ~/nixos-config
 
-this wil tempor
+2. Import Hardware Specs
 
-```
-nix-shell -p git --run "git clone https://github.com/sudo-snuggle/nixos-config.git ."
-```
+You must use the hardware file generated for your specific machine:
+Bash
 
-### 2. Copy your hardware-configuration.nix 
-
-```
 cp /etc/nixos/hardware-configuration.nix ~/nixos-config/hardware-configuration.nix
-```
 
-### 3. run the flake
+3. Apply the Config
+Bash
 
-```
-cd ~/nixos-configs
 git add .
-sudo nixos-rebuild test --flake .#nixos-btw
+sudo nixos-rebuild switch --flake .#nixos-btw
 
-```
+⚠️ Important Notes
 
-**For best results:**
+    [!CAUTION] Git Tree is Dirty: You will see a warning saying Git tree is dirty. Ignore it. This just means you haven't committed your hardware-configuration.nix yet. The installation will work fine.
 
+    [!IMPORTANT] State Version: Ensure the system.stateVersion in configuration.nix matches the version you originally installed. Do not change this unless you know what you are doing.
 
----
+    [!TIP] Post-Install: After the first reboot, run sudo passwd yasiru to ensure your user password is set correctly.
 
-## Features
+✨ Features
 
+    Ozone Wayland: Electron apps forced to native Wayland.
 
----
+    Power Management: Optimized for ThinkPads via TLP and Thermald.
 
-## Showcase
+    Clean CLI: Modern replacements like eza, zoxide, and bat pre-configured.
 
+📸 Showcase
 
-</details>
-
-
----
-
-## Final Thooughts
+(Insert your screenshots here)
