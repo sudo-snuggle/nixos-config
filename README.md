@@ -11,6 +11,12 @@
 * **wm**: niri
 * **shell**: noctalia shell
 
+ <p align="center">
+  <img src="assets/desktop.png" alt="Niri Desktop Showcase" width="800">
+  <br>
+  <b>A simple, opinionated, and minimal NixOS configuration.</b>
+</p>
+
 ---
 
 ## 📁 Directory Overview
