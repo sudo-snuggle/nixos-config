@@ -60,6 +60,11 @@ nix-shell -p git --run "git clone https://github.com/sudo-snuggle/nixos-config.g
 cd ~/nixos-config
 ```
 
+**⚠️important:**
+
+ State Version: Ensure the system.stateVersion in configuration.nix matches the version you originally installed. Do not change this unless you know what you are doing
+ 
+
 ### 2. Copy your hardware-configuration.nix 
 
 You must use the hardware file generated for your specific machine:
@@ -69,12 +74,6 @@ cp /etc/nixos/hardware-configuration.nix ~/nixos-config/hardware-configuration.n
 ```
 
 ### 3. Apply the Config
-
-
-**⚠️important:**
-
- State Version: Ensure the system.stateVersion in configuration.nix matches the version you originally installed. Do not change this unless you know what you are doing
-
 
 ```
 git add .
@@ -89,7 +88,13 @@ sudo nixos-rebuild test --flake .#nixos-btw
 
 ## after Installation 
 
+### 1. Set your Password
 
+By default, this config creates a user named astolfo. u hv set a password after rebooting:
+
+```
+sudo passwd astolfo
+```
 
 ---
 
