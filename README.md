@@ -1,5 +1,5 @@
 
-# NixOS+Niri+noctalia shell
+# NixOS+Niri+noctalia shell (dont use this yet)
 
 *nixos configfiles. which niri (wayland compositor) and conctalia shell*
 
@@ -21,23 +21,29 @@ just my personal nixos setup
 <summary>tree .</summary>
 
 ```bash
-Nixos-configs/
-├── flake.nix
+NIXOS-CONFIG
+├── home/
+│   ├── media/
+│   │   └── spicetify.nix
+│   ├── programs/
+│   ├── shell/
+│   │   ├── fish.nix
+│   │   └── noctalia.nix
+│   ├── terminal/
+│   │   ├── alacritty.nix
+│   │   └── fastfetch.nix
+│   └── web/
+│       └── zen.nix
+├── modules/
+│   ├── fonts/
+│   │   └── fonts.nix
+│   └── packages/
+│       └── essentials.nix
+├── configuration.nix
 ├── flake.lock
-├── nixos95
-│   ├── dotfiles/
-│   ├── core.nix
-│   ├── default.nix
-│   ├── desktop.nix
-│   ├── keybinds.nix
-│   ├── taskbar.nix
-│   └── theme.nix
-├── Ressources/
-│   ├── Icons/
-│   ├── Images/
-│   │   └── Wallpapers/
-│   └── Themes/
-├── README.md
+├── flake.nix
+├── hardware-configuration.nix
+└── home.nix
 ```
 
 </details>
