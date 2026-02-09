@@ -53,15 +53,13 @@ follow the manual installation process:
 
 ### 1. 
 
-### 2.
-
 ```
 {
     
 }
 ```
 
-> Warning:
+### 2.
 
 ```
 {
@@ -76,17 +74,10 @@ follow the manual installation process:
 }
 ```
 
-### Experimental Features
-
-To enable them in config set:
-```
-
-```
-
 **For best results:**
 
-1. Rebuild twice
-2. Log out and back in after each rebuild
+1. Rebuild twice and 
+2. Log out and log in back
 
 ---
 
