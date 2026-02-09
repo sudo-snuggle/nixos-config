@@ -51,33 +51,31 @@ NIXOS-CONFIG
 
 follow the manual installation process:
 
-### 1. 
+### 1. Download the Config
+
+this wil tempor
 
 ```
-{
-    
-}
+nix-shell -p git --run "git clone https://github.com/sudo-snuggle/nixos-config.git ."
 ```
 
-### 2.
+### 2. Copy your hardware-configuration.nix 
 
 ```
-{
-
-}
+cp /etc/nixos/hardware-configuration.nix ~/nixos-config/hardware-configuration.nix
 ```
 
-### 3. 
+### 3. run the flake
 
 ```
-{
-}
+cd ~/nixos-configs
+git add .
+sudo nixos-rebuild test --flake .#nixos-btw
+
 ```
 
 **For best results:**
 
-1. Rebuild twice and 
-2. Log out and log in back
 
 ---
 
