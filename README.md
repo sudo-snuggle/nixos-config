@@ -155,11 +155,6 @@ sudo NIX_CONFIG="experimental-features = nix-command flakes pipe-operators" nixo
 
 ### Experimental Features
 
-NixOS-95 relys on multiple experimental nix features. These are:
-1. [flakes](https://wiki.nixos.org/wiki/Flakes)
-2. [pipe-operators](https://nix.dev/manual/nix/2.26/language/operators#pipe-operators)
-They are needed to activate the configuration.
-
 To enable them in your config set:
 ```nix
 nix.settings.experimental-features = [
@@ -180,10 +175,6 @@ Due to how **Home Manager** and XFCE handle theming, changes may not fully apply
 
 ## Features
 
-* Pixel-style retro desktop with pastel polish
-* Lightweight and XFCE-powered (great for low-spec machines)
-* Flake-based configuration with easy updates
-* Themed with Chicago95 and matching icon set
 
 ---
 
