@@ -119,6 +119,7 @@ sudo passwd astolfo
 
 ## Showcase
 
+https://github.com/sudo-snuggle/nixos-config/issues/1#issue-3917603692
 
 </details>
 
