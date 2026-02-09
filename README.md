@@ -47,7 +47,7 @@ NIXOS-CONFIG
 </details>
 
 ---
-## Installation 
+## 🚀 Installation 
 
 This guide assumes you have already performed a basic NixOS installation via the GUI/Calamares installer.
 
@@ -86,7 +86,7 @@ sudo nixos-rebuild test --flake .#nixos-btw
 
 ---
 
-## after Installation 
+##  🛠️ after Installation 
 
 ### 1. Set your Password
 
