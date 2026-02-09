@@ -20,7 +20,7 @@ just my personal nixos setup
 <details>
 <summary>tree .</summary>
 
-```bash
+
 NIXOS-CONFIG
 ├── home/
 │   ├── media/
