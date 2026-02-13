@@ -44,6 +44,9 @@ NIXOS-CONFIG
 ├── modules/
 │   ├── fonts/
 │   │   └── fonts.nix
+│   ├── power/
+│   │   ├── thinkfan.nix
+│   │   └── undervolt.nix
 │   └── packages/
 │       └── essentials.nix
 ├── configuration.nix
