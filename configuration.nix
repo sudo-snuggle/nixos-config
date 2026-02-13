@@ -11,8 +11,8 @@
 
 
       ./modules/fonts/fonts.nix
-      ./modules/power/undervolt.nix
-      ./modules/power/thinkfan.nix
+      #./modules/power/undervolt.nix
+      #./modules/power/thinkfan.nix
     ];
 
 # ----- [ BOOTLOADER ] ------------------------------
