@@ -8,14 +8,31 @@
   imports =
     [ # results of the hardware scan.
       ./hardware-configuration.nix
+
+
       ./modules/fonts/fonts.nix
+      ./modules/power/undervolt.nix
+      ./modules/power/thinkfan.nix
     ];
 
 # ----- [ BOOTLOADER ] ------------------------------
 
-  # Set Bootloader to systemd boot
-  boot.loader.systemd-boot.enable = true;
+# Disable systemd-boot
+  boot.loader.systemd-boot.enable = false;
+
+  # Enable GRUB
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev"; 
+    efiSupport = true;
+    # search for others
+    useOSProber = true; 
+  };
+  
+  # EFI variables can still be touched
   boot.loader.efi.canTouchEfiVariables = true;
+
+
 
 
 # ----- [ KERNEL and FIRMWARE ] ------------------------------
@@ -30,10 +47,12 @@
   hardware.firmware = [ pkgs.linux-firmware ];
 
 # ----- [ HOSTNAME ] --------------------------------------------
+
   # Set up hostname
   networking.hostName = "Nixos";
 
 # ----- [ NETWORKING AND WIFI ] ---------------------------------
+
   # Set up network manager
   networking.networkmanager.enable = true;
 
@@ -58,6 +77,7 @@
 
 
 # ----- [ DISPLAY MANAGER ] ------------------------------
+
   # login screen
   # services.displayManager.sddm.enable = true;
   # services.displayManager.gdm.enable = true;
@@ -153,23 +173,23 @@
   btop
   bottom
   cmatrix
-  fastfetch # ff in fish
+  fastfetch 
   htop
   lolcat
   procs
 
   # "Web & Media"
-  brave
+ # brave
   #chromium #  GOOGLE SPYWARE.
   #firefox
   localsend
-  mpv
+ # mpv
   # vlc
-  yt-dlp # download youtube videos. Cool tool
+ # yt-dlp # download youtube videos. 
   # youtube-music
   # tor
   # zoom-us
-  ytfzf #yt search in terminal
+ # ytfzf #yt search in terminal
 
   # Productivity & Office
   #anki
@@ -225,12 +245,12 @@
   #obs-studio
 
   # "System Maintenance & Hardware"
- # lm_sensors
- # pciutils       # lspci
-  #pavucontrol
- # smartmontools
- # usbutils       # lsusb
-  lm_sensors      # CLI tool for checking sensors
+   pciutils       # lspci
+   #pavucontrol
+   smartmontools
+   # usbutils       # lsusb
+   lm_sensors      # CLI tool for checking sensors
+   powertop
 
   # "Security & Privacy"
   #keepassxc
@@ -238,7 +258,7 @@
   #yubikey-manager
 
   # "Runtime & Compatibility"
-  gnome-boxes    # virtual machines
+ # gnome-boxes    # virtual machines
  # wine
 
   # Nix Eco Utilities
@@ -254,7 +274,7 @@
    programs.fish.enable = true;
 
   # kde connect
-    programs.kdeconnect.enable = true;
+  # programs.kdeconnect.enable = true;
 
   # Install firefox
     #programs.firefox.enable = true;
@@ -375,9 +395,9 @@
   # Thermald 
   services.thermald.enable = true;
 
-# ----- [ THINKPAD SPECIFIC ] ------------------------------
 
-boot.kernelModules = [ "thinkpad_acpi" ];
+
+
 
 # ----- [ FLAKES ] ------------------------------
 
@@ -402,7 +422,7 @@ boot.kernelModules = [ "thinkpad_acpi" ];
 
   system.autoUpgrade = {
     enable = true;
-    flake = "/home/yasiru/nixos-configs#thinkpad-niri"; 
+    flake = "/home/yasiru/nixos-configs#nixos-btw"; 
   
     # Runs every Friday. "weekly" is also an option, 
     # but specific time is better to know if it happens 
