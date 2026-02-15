@@ -120,7 +120,7 @@ sudo passwd yasiru
 * **CLI Tools**: Modern replacements (`eza`, `zoxide`, `bat`, `fzf`)
 * **Shell**: Fish Shell (Themed with Noctalia)
 * **Wayland**: Ozone layer enabled (Forces Electron apps to native Wayland)
-* **Power**: TLP & Thermald (ThinkPad optimized battery/thermal logic)
+* **Power**: TLP & Thermald 
 * 
 * **Auto-Updates**: Scheduled system updates every Friday morning
 * **Auto-Cleanup**: Weekly garbage collection for old system generations
