@@ -102,10 +102,10 @@ sudo nixos-rebuild test --flake .#nixos-btw
 
 ### 1. Set your Password
 
-By default, this config creates a user named astolfo. u hv set a password after rebooting:
+By default, this config creates a user named yasiru. u hv set a password after rebooting:
 
 ```
-sudo passwd astolfo
+sudo passwd yasiru
 ```
 
 ---
