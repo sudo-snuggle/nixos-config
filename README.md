@@ -71,9 +71,10 @@ This guide assumes you have already performed a basic NixOS installation via the
 ### 1. Clone the Repository
 
 Clone this into your home folder:
+u might hv to install git if u dont already hv it. or run it in a shell env
 
 ```
-nix-shell -p git --run "git clone https://github.com/sudo-snuggle/nixos-config.git ."
+git clone https://github.com/sudo-snuggle/nixos-config.git
 cd ~/nixos-config
 ```
 
