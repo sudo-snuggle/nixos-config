@@ -14,11 +14,12 @@
 <p align="center">
   <b>📸 Setup Showcase</b>
   <br>
+  <img src="Assets/Screenshot from 2026-02-09 23-50-07.png" width="48%" />
   <img src="Assets/Screenshot from 2026-02-09 23-46-19.png" width="48%" />
-  <img src="Assets/Screenshot from 2026-02-09 23-47-09.png" width="48%" />
   <br>
+  <img src="Assets/Screenshot from 2026-02-09 23-47-09.png" width="48%" />
   <img src="Assets/Screenshot from 2026-02-09 23-47-52.png" width="48%" />
-  <img src="Assets/Screenshot from 2026-02-13 16-37-57.png" width="48%" />
+  
 </p>
 ---
 
